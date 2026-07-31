@@ -1,0 +1,20 @@
+.DS_Store
+videos/
+
+# Post output is NOT tracked (Line 2026-07-31, closing the 07-15 open decision).
+# Git history can never shed a deleted binary, so tracking renders means .git
+# grows forever while the working folder is cleaned. Drive is the archive:
+#   ltstrategy:KB+LT Edge 2026/images/            published
+#   ltstrategy:KB+LT Edge 2026/images/_rejected/  scrapped
+# Moved there by .claude/scripts/archive-media.py in marketing-system.
+images/
+carousels/*
+!carousels/_templates/
+
+# music/ is NOT tracked either (Line 2026-07-31): 48 MB of beds, backed up at
+# Drive music-beds/. It stays on disk because Producer reads it at render time
+# (blotato/video.md), but git holding a second copy buys nothing.
+music/
+
+# STILL TRACKED, deliberately: brand/ logos and carousels/_templates/ — small,
+# stable inputs the Producer pipeline reads by local path. Both also on Drive.
